@@ -98,23 +98,27 @@ body {
 section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 720px;
-  border-radius: 10px;
+  width: 45rem;
+  border-radius: 0.625rem;
   background: var(--white);
 }
 
-.images img {
-  border-radius: 10px 0 0 10px;
+.img-mobile {
+  display: none;
+}
+
+.img-desktop {
+  border-radius: 0.625rem 0 0 0.625rem;
 }
 
 .container {
-  margin: 32px;
+  margin: 2rem;
 }
 
 .container > span {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
-  letter-spacing: 5px;
+  letter-spacing: 0.312rem;
   color: var(--dark-grayish-blue);
   text-transform: uppercase;
 }
@@ -123,21 +127,21 @@ section {
   font-family: "Fraunces", sans-serif;
   font-size: 2.5rem;
   line-height: 1;
-  margin: 32px 0;
+  margin: 2rem 0;
 }
 
 .container p {
   font-family: "Montserrat", sans-serif;
   font-size: 1.1rem;
   color: var(--dark-grayish-blue);
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
 }
 
 .perfume-price {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .price-off {
@@ -157,19 +161,74 @@ section {
 
 .button {
   grid-column: 1/-1;
-  border-radius: 5px;
+  border-radius: 0.312rem;
   border: none;
   color: var(--white);
   background: var(--dark-cyan);
-  padding: 13px;
+  padding: 0.812rem;
   font-family: "Montserrat";
   font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .button:hover {
   background-color: var(--very-dark-blue);
+}
+
+@media screen and (min-width: 360px) and (max-width: 800px) {
+  body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section {
+    grid-template-columns: 1fr;
+    width: 360px;
+    height: 635px;
+    border-radius: 0.625rem;
+  }
+
+  .img-desktop {
+    display: none;
+  }
+
+  .img-mobile {
+    display: block;
+    width: 100%;
+    border-radius: 0.625rem 0.625rem 0 0;
+  }
+
+  .container > span {
+    font-size: 0.875rem;
+  }
+
+  .container h1 {
+    font-size: 2rem;
+    margin: 0.875rem 0;
+  }
+
+  .container p {
+    font-size: 0.937rem;
+    margin-bottom: 0;
+  }
+
+  .perfume-price {
+    margin: 1rem 0;
+    gap: 0.5rem;
+  }
+  .price-off {
+    font-size: 2rem;
+  }
+
+  .price-full {
+    font-size: 0.875rem;
+  }
+
+  .button {
+    padding: 0.7rem;
+  }
 }
